@@ -1,0 +1,29 @@
+public class Activity {
+    public static void main(String[] args) throws Exception {
+        BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+        int x = 0;
+        if ("q".equals(bf.readLine())) {
+            System.out.println("quit");
+            return;
+        }
+        try {
+            x = Integer.valueOf(bf.readLine());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        while (x > 0) {
+            System.out.println(doSomething(x));
+            x--;
+        }
+        if (x <= 0) {
+            throw new Exception("Error Message");
+        }
+    }
+    private static int doSomething(int x) {
+        int res = 0;
+        for (int i = 1; i <= x; i++) {
+            res += i;
+        }
+        return res;
+    }
+}

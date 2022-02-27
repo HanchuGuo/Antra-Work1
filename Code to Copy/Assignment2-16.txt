@@ -1,0 +1,51 @@
+public class CountFile {
+    public static void main(String[] args) throws FileNotFoundException {
+        CountFile c = new CountFile();
+        Criteria cr = new Criteria();
+        cr.path = "D:\\Tomcat\\apache-tomcat-9.0.46-windows-x86\\apache-tomcat-9.0.46";
+        File f = new File(cr.path);
+        if (!f.exists()) {
+            throw new FileNotFoundException("Can't Find this file");
+        } else if (f.isDirectory()) {
+            cr.include = true;
+        } else {
+            cr.include = false;
+        }
+        cr.extension = "no";
+        c.count(cr);
+    }
+    public void count(Criteria c) throws FileNotFoundException {
+        File f = new File(c.path);
+        if (!f.exists()) {
+            throw new FileNotFoundException("Can't Find this file");
+        }
+        int files = 0;
+        int folders = 0;
+        if (!c.include) {
+            System.out.println("There are " + files + " file(s) and " + folders + " folder(s) inside folder " + f.getName() + " with " + c.extension + " extension.");
+            return;
+        } else {
+            File[] list = f.listFiles();
+            for (int i = 0; i < list.length; i++) {
+                if (list[i].isFile()) {
+                    files++;
+                } else {
+                    folders++;
+                }
+            }
+        }
+        System.out.println("There are " + files + " file(s) and " + folders + " folder(s) inside folder " + f.getName() + " with " + c.extension + " extension.");
+    }
+}
+class Criteria {
+    String path;
+    boolean include;
+    String extension;
+    public Criteria() {
+    }
+    public Criteria(String path, boolean include, String extension) {
+        this.path = path;
+        this.include = include;
+        this.extension = extension;
+    }
+}

@@ -1,0 +1,22 @@
+public class Second {
+    public static void main(String[] args) {
+        Second s = new Second();
+        int r = s.second(new int[]{1, 7, 4, 5});
+        System.out.println(r);
+    }
+    private int second(int[] arr) {
+        if (arr == null || arr.length < 2) {
+            return Integer.MIN_VALUE;
+        }
+        int fir = arr[0];
+        int sec = arr[0];
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] > fir) {
+                fir = arr[i];
+            } else if (arr[i] > sec) {
+                sec = arr[i];
+            }
+        }
+        return sec;
+    }
+}

@@ -1,0 +1,32 @@
+public class Merge {
+    public static void main(String[] args) {
+        Merge m = new Merge();
+        System.out.println(Arrays.toString(m.merge(new int[]{1,2}, new int[]{4})));
+    }
+    public int[] merge(int[] arr1, int[] arr2) {
+        if (arr1 == null) {
+            return arr2;
+        } else if (arr2 == null) {
+            return arr1;
+        }
+        int one = arr1.length;
+        int two = arr2.length;
+        int[] res = new int[one + two];
+        int i = 0;
+        int j = 0;
+        int k = 0;
+        while (i < one + two) {
+            if (j < one) {
+                res[i] = arr1[j];
+                i++;
+                j++;
+            }
+            if (k < two) {
+                res[i] = arr2[k];
+                i++;
+                k++;
+            }
+        }
+        return res;
+    }
+}

@@ -1,0 +1,52 @@
+public abstract class Shape implements Comparable<Shape>{
+    public int area;
+    public abstract int compareTo(Shape s);
+    public abstract int calculate();
+}
+class Circle extends Shape {
+    int radius;
+    public int compareTo(Shape s) {
+        Circle c = (Circle) s;
+        return area < c.area ? -1 : 1;
+    }
+    public int calculate() {
+        return 3 * radius * radius;
+    }
+    public Circle(int radius) {
+        super();
+        this.radius = radius;
+        this.area = calculate();
+    }
+}
+class Rectangle extends Shape {
+    int width;
+    int length;
+    public int compareTo(Shape s) {
+        Circle c = (Circle) s;
+        return area < c.area ? -1 : 1;
+    }
+    public int calculate() {
+        return width * length;
+    }
+    public Rectangle(int width, int length) {
+        super();
+        this.width = width;
+        this.length = length;
+        this.area = calculate();
+    }
+}
+class Square extends Shape {
+    int width;
+    public int compareTo(Shape s) {
+        Circle c = (Circle) s;
+        return area < c.area ? -1 : 1;
+    }
+    public int calculate() {
+        return width * width;
+    }
+    public Square(int width) {
+        super();
+        this.width = width;
+        this.area = calculate();
+    }
+}

@@ -1,0 +1,26 @@
+public class Fifteen {
+    public static void main(String[] args) {
+        Fifteen f = new Fifteen();
+        Map<String, String> m = new HashMap<>();
+        m.put("a", "1");
+        m.put("b","2");
+        m.put("c","10");
+        List<Integer> l = Arrays.asList(1,2,3,4,10);
+        l = f.dedup(m, l);
+        System.out.println(l);
+    }
+    private List<Integer> dedup(Map<String, String> map, List<Integer> l) {
+        Set<Integer> set = new HashSet<>();
+        for (Map.Entry<String, String> e : map.entrySet()) {
+            Integer i = Integer.valueOf(e.getValue());
+            set.add(i);
+        }
+        List<Integer> res = new ArrayList<>();
+        for (Integer i : l) {
+            if (!set.contains(i)) {
+                res.add(i);
+            }
+        }
+        return res;
+    }
+}
