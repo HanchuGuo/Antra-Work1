@@ -3,3 +3,5 @@ Since my summary is hand-write, I plan to use this link to update my summary in 
 https://docs.google.com/document/d/19ih9v5rrEch97n_Ij5TH7V3F1aVsy4h8lzLoeVzAZkc/edit#
 3/14
 do JDBC Summary
+3/16
+update Hibernate summary, valitile, and Java application vs Web application
