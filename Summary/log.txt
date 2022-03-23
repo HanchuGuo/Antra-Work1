@@ -9,3 +9,7 @@ update valitile, and Java application vs Web application
 update Hibernate summary https://docs.google.com/document/d/19ih9v5rrEch97n_Ij5TH7V3F1aVsy4h8lzLoeVzAZkc/edit#
 3/17
 update reflection maganism https://docs.google.com/document/d/19ih9v5rrEch97n_Ij5TH7V3F1aVsy4h8lzLoeVzAZkc/edit#
+3/20
+update container https://docs.google.com/document/d/19ih9v5rrEch97n_Ij5TH7V3F1aVsy4h8lzLoeVzAZkc/edit#
+3/22
+update Using GitHub to build CICD https://docs.google.com/document/d/19ih9v5rrEch97n_Ij5TH7V3F1aVsy4h8lzLoeVzAZkc/edit#
